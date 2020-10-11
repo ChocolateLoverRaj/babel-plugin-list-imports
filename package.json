@@ -12,6 +12,7 @@
     "test:actions": "npm run test:ci && npm run lint",
     "lint": "standard",
     "lint:fix": "standard --fix",
+    "commonignore": "commonignore"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
   "devDependencies": {
     "common-ignore": "^1.1.1",
     "jest": "^26.5.2",
+    "pre-commit": "^1.2.2",
     "standard": "^14.3.4"
   },
   "pre-commit": "commonignore"
