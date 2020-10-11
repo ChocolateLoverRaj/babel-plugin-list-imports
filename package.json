@@ -5,8 +5,13 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "standard"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:ci": "node --experimental-vm-modules node_modules/jest/bin/jest.js --ci",
+    "test:update": "node --experimental-vm-modules node_modules/jest/bin/jest.js -u",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:actions": "npm run test:ci && npm run lint",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
   },
   "repository": {
     "type": "git",
@@ -30,10 +35,13 @@
   },
   "homepage": "https://github.com/ChocolateLoverRaj/babel-plugin-list-imports#readme",
   "dependencies": {
-    "@babel/core": "^7.11.6"
+    "@babel/core": "^7.11.6",
+    "eventemitter3": "^4.0.7"
   },
   "devDependencies": {
+    "common-ignore": "^1.1.1",
     "jest": "^26.5.2",
     "standard": "^14.3.4"
-  }
+  },
+  "pre-commit": "commonignore"
 }

@@ -12,7 +12,7 @@ import babel from '@babel/core'
 import createImportLister from 'babel-plugin-list-imports'
 
 // Create the plugin
-const importLister = createImportLister() // { plugin: [Plugin], state: [Set] }
+const importLister = createImportLister() // EventEmitter { plugin: [Plugin], state: [Set] }
 
 // Example code, demonstrates all recognized imports
 const code = `
@@ -54,26 +54,29 @@ document.getElementById('load-button').addEventListener('click', () => {
 `
 
 // Use the plugin
+
+// You don't need to wait for other plugins to run before accessing the imports
+// You can listen for the 'list' event
+importLister.once('list', () => {
+  // You can get the [Set] of imports with the state property
+  console.log(importLister.state) 
+  /* Set { 
+    'react', 
+    './some-utils.js',
+    'side-effects.js',
+    './styles.css',
+    'some-lib',
+    './source.js',
+    './another-source.js',
+    'dynamic',
+    './tool.js',
+    '../path/to/import.js',
+    'string-literal'
+  } */
+
+  // If you are going to reuse this plugin, remember to reset the state
+  importLister.state.clear()
+})
+
 // This example does transformAsync
 babel.transformAsync(code, { plugins: [importLister.plugin] })
-  .then(() => {
-    // You can get the [Set] of imports with the state property
-    console.log(importLister.state) 
-    /* Set { 
-      'react', 
-      './some-utils.js',
-      'side-effects.js',
-      './styles.css',
-      'some-lib',
-      './source.js',
-      './another-source.js',
-      'dynamic',
-      './tool.js',
-      '../path/to/import.js',
-      'string-literal'
-    } */
-
-    // If you are going to reuse this plugin, remember to reset the state
-    // The .reset() method is not part of a Set() class, it is a custom function
-    importLister.state.reset()
-  })

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`README.md example 1`] = `
+Set {
+  "react",
+  "./some-utils.js",
+  "side-effects.js",
+  "./styles.css",
+  "some-lib",
+  "./source.js",
+  "./another-source.js",
+  "dynamic",
+  "./tool.js",
+  "../path/to/import.js",
+  "string-literal",
+}
+`;
