@@ -1,0 +1,39 @@
+{
+  "name": "babel-plugin-list-imports",
+  "version": "0.1.0",
+  "description": "Lists the files imported by a ESModule file.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChocolateLoverRaj/babel-plugin-list-imports.git"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "babel-plugin",
+    "esm",
+    "es",
+    "esmodule",
+    "imports",
+    "list",
+    "get"
+  ],
+  "author": "Rajas Paranjpe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChocolateLoverRaj/babel-plugin-list-imports/issues"
+  },
+  "homepage": "https://github.com/ChocolateLoverRaj/babel-plugin-list-imports#readme",
+  "dependencies": {
+    "@babel/core": "^7.11.6"
+  },
+  "devDependencies": {
+    "jest": "^26.5.2",
+    "standard": "^14.3.4"
+  }
+}
