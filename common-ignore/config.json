@@ -3,14 +3,12 @@
   "outputDir": "../",
   "files": {
     "git.txt": {
-      "extends": [
-        "common.txt"
-      ],
+      "extends": [],
       "output": ".gitignore"
     },
     "npm.txt": {
       "extends": [
-        "common.txt"
+        "git.txt"
       ],
       "output": ".npmignore"
     }

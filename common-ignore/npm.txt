@@ -1,0 +1,14 @@
+# Test Files
+*.test.js
+
+# Snapshots
+__snapshots__/
+
+# Common-Ignore
+common-ignore/
+
+# Vscode
+.vscode/
+
+# GitHub
+.github/

@@ -12,7 +12,7 @@
     "test:actions": "npm run test:ci && npm run lint",
     "lint": "standard",
     "lint:fix": "standard --fix",
-    "commonignore": "commonignore"
+    "commonignore": "commonignore -c common-ignore/config.json"
   },
   "repository": {
     "type": "git",
