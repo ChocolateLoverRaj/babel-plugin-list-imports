@@ -1,8 +1,23 @@
 # Dependency Tree
-Line 7: git.txt
+Line 08: npm.txt
+Line 22:       | --> git.txt
 
 
 # Input Files
+
+# Input: 'npm.txt'
+# Test Files
+*.test.js
+__snapshots__/
+
+# Common-Ignore
+common-ignore/
+
+# Vscode
+.vscode/
+
+# GitHub
+.github/
 
 # Input: 'git.txt'
 # Logs
