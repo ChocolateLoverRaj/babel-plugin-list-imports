@@ -1,4 +1,3 @@
-// TODO: fix bug with common-ignore module and update tests
 // A babel plugin that lists imports
 import babel from '@babel/core'
 import EventEmitter from 'eventemitter3'
